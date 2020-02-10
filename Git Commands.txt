@@ -1,0 +1,33 @@
+Git Commands
+
+git init - initialize the repository.
+git add . - add all the files that were changed since the last back up to the staging area.
+git status - shows you all the files that were changed since the last backup and which ones are already added to the staging area.
+git commit -m "..." - commits the changes to the repository.
+git checkout ____ - switches to the branch name provided in your git repository. This will create a new branch if the name provided doesn't exist.
+git branch - shows all of your git branches and marks the one you are currently on.
+git log - shows all the backups created in the repository.
+git blame ____ - shows who wrote which line of code or in other words who is to be blamed for that particular line of code.
+git remote add origin ____ - tells git to add a remote place called 'origin' to a remote URL ___.
+git push - pushes the changes in your local repository to the remote repository.
+git pull - pulls the changes in a remote repository to your own local repository.
+git clone ___ - clones a remote repository in ___ to your own local folder.
+
+The repository is the place where the version control system keeps track of all the changes you make. Most Version Control Systems (VCS) store the current state of the code, along with when each change was made, who made it, and a text log message that explains why they made the change.
+
+You can think of a repository like a bank vault and its history like the ledger. Each time a deposit—what is called a commit in VCS lingo—is made, your VCS tool adds an entry to the ledger and stores the changes for safe keeping.
+
+.git
+The presence of a git repo can be defined by a hidden directory named .git, which is created when a new repo is initialized, and contains all meta information regarding that specific repository.  As you get more familiar with git, you may find yourself editing files in there - customizing your options, for example - but for now just know that it's there, and a general idea of what it contains.  If you wish to completely remove a git repo from your file-system, you may simply remove this .git directory.  Understand, that if there is no backup of that repo, then all data - including the project files, commit history, etc -  will be lost.
+
+Working Trees
+So far we’ve discussed the repository and talked about all the files you’re storing in it, but we haven’t talked about where you make all of your changes. This happens in your working tree.
+
+The working tree is your current view into the repository. It has all the files from your project: the source code, build files, unit tests, and so on.  The root of your working tree will be the directory that contains the .git directory for your repo.  All files and directories contained from within this root, including directories that get added later, will be considered part of your repo's working tree.  What this means is that files that make up your directory's working tree will be able to be the subject of git commands, such as
+
+     # adds html file to your repo's index, or staging.  this file must exist from within your repo's working tree
+     git add index.html
+     # adds all files and directories from where your terminal is located, recursively, throughout all sub-directories from your present location.  must be executed from within your repo's working tree.
+     git add .
+ 
+These commands will track those files as part of the larger directory, preserved as log entries in your .git directory.

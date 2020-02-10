@@ -1,0 +1,25 @@
+$ cd Desktop
+
+$ mkdir test
+
+$cd test 
+    $touch index.html
+    $touch style.css
+    $touch commands.txt
+
+$cp index.html index_2.html
+
+$cd ..
+    $mkdir destination
+    $cd test
+    $mv index_2.html ../destination/index_2.html
+
+$rm style.css
+
+$ls test
+$ls commands
+
+$rm -rf destination
+
+
+Version control allows us to keep track of the changes that have been made to our projects, to roll back to previous versions and current versions, to easily collaborate with our friends and coworkers, and to add new features to our projects without having to change its current status. 

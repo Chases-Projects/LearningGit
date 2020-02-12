@@ -1,0 +1,26 @@
+$cd Destop
+
+$mkdir Test
+
+$touch index.html
+
+$touch style.css
+
+$git init
+
+$git add .
+
+$git commit -m "Initial Commit"
+
+$git add .
+
+$git commit -m "Update html"
+
+$git add .
+
+$git commit -m "Update css"
+
+$git log
+
+$git revert -n
+    $git commit -m "Revert css"

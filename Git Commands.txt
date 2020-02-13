@@ -14,6 +14,11 @@ git pull - pulls the changes in a remote repository to your own local repository
 git clone ___ - clones a remote repository in ___ to your own local folder.
 git log   -    Git shows each new commit’s log entry, along with who made the commit, when, and optionally the changes that were made.
 git diff --stat commitCode  -    There’s another cool option for git diff that prints some statistics about the changes that have been made. Just add the --stat option to see what changes have been made since a particular commit.
+git remote add origin https://github.com/<github username>/<github repo name>.git
+     git push origin master   -     EX:git remote add origin https://github.com/purpleshoelace/git-demo.git
+git clone <URL of repository>      -    EX: git clone https://github.com/purpleshoelace/git-demo.git
+"Ignoring" files from your local repository       -    .gitignore example: see below
+
 
 The repository is the place where the version control system keeps track of all the changes you make. Most Version Control Systems (VCS) store the current state of the code, along with when each change was made, who made it, and a text log message that explains why they made the change.
 
@@ -33,3 +38,69 @@ The working tree is your current view into the repository. It has all the files 
      git add .
  
 These commands will track those files as part of the larger directory, preserved as log entries in your .git directory.
+
+"Ignoring" files from your local repository
+There will be times when you may wish to prevent files in your local repository from getting pushed to your remote repository. As few notable cases for this is:
+
+There is sensitive information that you require for development, but do not wish the outside world to see. An example of this would be an API key, say for Google Maps. You need the API key for Google to authenticate your usage of the API, but you do not want this API key to exist on your public GitHub repo. If someone needs your API key, they can get it from you - or get their own. If you need it at some other point in time - say when you are deploying your project - you can just add it then.
+Large package directories. There are times where you will be using external development packages that get installed to your Working Tree. It is unnecessary to push what could end up being GBs of external code files up to your remote GitHub repo. Someone could clone your repo, and easily install the required packages themselves.
+This can be done by including a simple text file called .gitignore inside your project's root directory (the name of this file - and its location - has to be precise, so that git knows to use it). Then, you add lines to this file for files or directories you wish to ignore from your repository. These files/directories will simply be hidden from the repo itself, and will not get committed/pushed to any remote repository. If a directory is ignored, all of the contents of that directory will be also ignored. The syntax for this file is very simple to pick up, but with pattern-matching can get as complex as you need. Start by understanding the basics, and check out the more powerful stuff as you require.
+
+.gitignore example:
+# ignores any file named "secret.txt"
+secret.txt
+# ignores any directory named "secrets"
+secrets/
+# ignores a file named "hidden.txt" located at the root of your working directory
+/hidden.txt
+# ignores a directory called "node_modules" located at the root of your working directory
+/node_modules/
+# ignores any file with a .png extension
+*.png
+# ignores any file or directory that begins in "cache", such as cache-file-01, cached_assets/, etc.
+cache*
+# ignores any file or directory that ends in "data", such as project_data/, big_file_of_data
+*data
+
+Sample Workflow
+Step 0: Planning
+The key in establishing an effective project workflow is communication. Take the time upfront to decide on your workflow “rules”. This will save time and avoid confusion/conflicts.
+Decide how your group will keep track of tasks, features, and bugs. (GitHub repository issue tracking** is very useful for this, although, a simple Google Doc or even a list on whiteboard could suffice.)
+
+Step 1: Set Up
+One person creates the initial Git repository, pushes it to GitHub, and adds collaborators on the GitHub repository's settings page. All other team members can then clone the repository and add the remote origin (for the original GitHub repository.)
+
+git remote add origin URL
+Step 2: Creating a branch
+The master branch should always work without errors. A branch of the master, called develop or production would be the branch you mainly work from.
+
+Create branches off from develop for fixes or features, and then push to the develop branch (Step 3).
+
+git checkout -b BRANCHNAME
+Move to different branches:
+
+git checkout BRANCHNAME
+Check your current branch:
+
+git branch
+Keep branch names descriptive. For example, "product-view" or "fix-login-password-error". When working with a team, you can add names to the branches "todd-product-view" or "nikki-fix-login-password-error". Always be aware of the branch you are working on, especially when merging or pushing updates.
+
+Step 3: Merging into the develop branch
+Before merging, grab all of the updates from the develop branch onto your own branch and resolve any conflicts.
+
+git pull origin develop
+Conflicts will be noted in the terminal. Open the noted local files to resolve the conflicts. Then, add, commit, and push to your branch. After resolving all conflicts, merge your branch into develop.
+
+git checkout develop
+git merge YOURBRANCH
+git push origin develop
+After merging, you can delete the local and remote version of your old branch.
+
+Step 4: Pushing to the master branch
+Once the develop branch is ready and working, merge the develop branch into the master, and push to GitHub.
+Congratulations! You've just updated a new version of your master project!
+
+**Using GitHub as backlog/bug list:
+As you think of features or encounter bugs that are not directly impeding on your current work, add them to the list and keep moving on.
+Create custom labels, assign tasks to collaborators, and comment on issues/tasks.
+Examples of feature tasks (using the story model): "User should be able to...", "After clicking on a product, the user should see all products with category list." If a feature is huge, break it up into smaller pieces.

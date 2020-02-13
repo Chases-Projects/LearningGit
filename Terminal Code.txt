@@ -7,6 +7,7 @@ cd ..   =   Changing to the parent directory
 cd /    =   Changing to the root directory
 cd folder_name  =   Changing to any folder
 touch file_name.file_type    =   Creating a new file
+ESC:WQ      =   Saves changes to a file
 rm index.html   =   Removing a file
 mkdir new_directory_name    =   Making a new folder
 rm directory_name   =   Delete an empty directory(folder)

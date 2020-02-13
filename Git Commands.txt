@@ -17,6 +17,18 @@ git diff --stat commitCode  -    There’s another cool option for git diff that
 git remote add origin https://github.com/<github username>/<github repo name>.git
      git push origin master   -     EX:git remote add origin https://github.com/purpleshoelace/git-demo.git
 git clone <URL of repository>      -    EX: git clone https://github.com/purpleshoelace/git-demo.git
+git checkout -b BRANCHNAME         -    Create branches off from develop for fixes or features, and then push to the develop branch (Step 3).
+git checkout BRANCHNAME            -    Move to different branches:
+git branch                         -    Check your current branch:
+git pull origin develop            -    Before merging, grab all of the updates from the develop branch onto your own branch and resolve any conflicts.
+git checkout develop               -    Conflicts will be noted in the terminal. Open the noted local files to resolve the conflicts. Then, add, commit, and push to your branch. After resolving all conflicts, merge your branch into develop.
+     git merge YOURBRANCH
+     git push origin develop
+
+
+
+
+
 "Ignoring" files from your local repository       -    .gitignore example: see below
 
 
@@ -61,6 +73,18 @@ secrets/
 cache*
 # ignores any file or directory that ends in "data", such as project_data/, big_file_of_data
 *data
+
+
+
+
+
+
+
+
+
+
+
+
 
 Sample Workflow
 Step 0: Planning

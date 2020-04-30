@@ -1,0 +1,19 @@
+First initialize your repository
+	navigate to the main project folder
+	command: git init
+	command: git add .
+	command: git commit -m "message"
+Next setup repository in GitHub
+	GitHub repository name does not have to be the same as your folder
+	dont work about readme file
+	
+Once you click create repository
+	page will give you commands to run
+	command: git remote add origin https://github.com/Chases-Projects/Dojo-Tweets.git
+	command: git push -u origin master
+
+DONE!
+Once you make changes to your project, 
+	command: git add .
+	command: git commit -m "message"
+	command: git push -u origin master

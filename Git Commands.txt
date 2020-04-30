@@ -24,7 +24,16 @@ git pull origin develop            -    Before merging, grab all of the updates 
 git checkout develop               -    Conflicts will be noted in the terminal. Open the noted local files to resolve the conflicts. Then, add, commit, and push to your branch. After resolving all conflicts, merge your branch into develop.
      git merge YOURBRANCH
      git push origin develop
+-r force .git  -    delete local repository
 
+Activate Environment
+------------------------------------------------------------------
+| Mac/Linux: | source py3Env/bin/activate                         
+------------------------------------------------------------------
+| Windows command prompt : | call py3Env\Scripts\activate       
+------------------------------------------------------------------
+| Windows git bash : | source py3Env/Scripts/activate         
+------------------------------------------------------------------
 
 
 

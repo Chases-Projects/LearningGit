@@ -17,3 +17,26 @@ Once you make changes to your project,
 	command: git add .
 	command: git commit -m "message"
 	command: git push -u origin master
+
+
+Creating a Branch
+
+	command: git checkout -b branchName
+
+Switch Between Branches
+	command: git checkout branchName
+
+Make changes to files
+	command: git add .
+	command: git commit -m "message"
+	command: git push origin branchName
+- go to GitHub and handle merge request
+- Switch to master branch
+	command: git pull origin master
+
+
+## Deleting a remote repository
+	Use the 
+	git remote rm <remote-name> 
+	
+	command to remove a remote from a repository

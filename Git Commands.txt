@@ -1,21 +1,24 @@
 Git Commands
 
-git init - initialize the repository.
-git add . - add all the files that were changed since the last back up to the staging area.
-git status - shows you all the files that were changed since the last backup and which ones are already added to the staging area.
-git commit -m "..." - commits the changes to the repository.
-git checkout ____ - switches to the branch name provided in your git repository. This will create a new branch if the name provided doesn't exist.
-git branch - shows all of your git branches and marks the one you are currently on.
-git log - shows all the backups created in the repository.
-git blame ____ - shows who wrote which line of code or in other words who is to be blamed for that particular line of code.
-git remote add origin ____ - tells git to add a remote place called 'origin' to a remote URL ___.
-git push - pushes the changes in your local repository to the remote repository.
-git pull - pulls the changes in a remote repository to your own local repository.
-git clone ___ - clones a remote repository in ___ to your own local folder.
-git log   -    Git shows each new commit’s log entry, along with who made the commit, when, and optionally the changes that were made.
-git diff --stat commitCode  -    There’s another cool option for git diff that prints some statistics about the changes that have been made. Just add the --stat option to see what changes have been made since a particular commit.
+git init                           - initialize the repository.
+git add .                          - add all the files that were changed since the last back up to the staging area.
+git status                         - shows you all the files that were changed since the last backup and which ones are already added to the staging area.
+git commit -m "..."                - commits the changes to the repository.
+git checkout ____                  - switches to the branch name provided in your git repository. 
+git checkout -b branchName         -    This will create a new branch if the name provided doesn't exist.
+git branch                         - shows all of your git branches and marks the one you are currently on.
+git log                            - shows all the backups created in the repository.
+git blame ____                     - shows who wrote which line of code or in other words who is to be blamed for that particular line of code.
+git remote add origin ____         - tells git to add a remote place called 'origin' to a remote URL ___.
+git push                           - pushes the changes in your local repository to the remote repository.
+git pull                           - pulls the changes in a remote repository to your own local repository.
+git clone ___                      - clones a remote repository in ___ to your own local folder.
+git log                            -    Git shows each new commit’s log entry, along with who made the commit, when, and optionally the changes that were made.
+git diff --stat commitCode         -    There’s another cool option for git diff that prints some statistics about the changes that have been made. Just add the --stat option to see what changes have been made since a particular commit.
+
 git remote add origin https://github.com/<github username>/<github repo name>.git
-     git push origin master   -     EX:git remote add origin https://github.com/purpleshoelace/git-demo.git
+
+git push origin master             -     EX:git remote add origin https://github.com/purpleshoelace/git-demo.git
 git clone <URL of repository>      -    EX: git clone https://github.com/purpleshoelace/git-demo.git
 git checkout -b BRANCHNAME         -    Create branches off from develop for fixes or features, and then push to the develop branch (Step 3).
 git checkout BRANCHNAME            -    Move to different branches:
